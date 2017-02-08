@@ -6,4 +6,5 @@ My vimrc config file + plugins
 ```shell
 mkdir -p ~/git/myVim
 git clone https://github.com/valentinp72/myVIM.git ~/git/myVim
-~/git/myVIM/install.sh```
+~/git/myVim/install.sh
+```
