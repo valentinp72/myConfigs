@@ -23,7 +23,7 @@ else
 	echo "<- Creating a backup of the old files ->"
 	echo -n "   ..."
 
-	tar -cvf ~/vimConfigSave.tar ~/.vimrc ~/.vim ~/.vimpkg 2> /dev/null
+	tar -cf ~/vimConfigSave.tar ~/.vimrc ~/.vim ~/.vimpkg 2> /dev/null
 	
 	echo " ... Done"
 
