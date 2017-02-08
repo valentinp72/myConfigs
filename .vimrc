@@ -7,9 +7,11 @@ set mouse=a
 set autoindent
 set smartindent
 set cindent
+set tabstop=4 " largeur des tabulations
 set whichwrap+=<,>,h,l,[,]
 set cursorline
-set clipboard=unamedplus
+set wrap linebreak nolist " soft wrap automatique
+set clipboard=unamed
 let g:netrw_liststyle = 3
 
 " Auto-refresh des fichiers
@@ -56,20 +58,40 @@ noremap XX "+x<CR>"
 
 
 "Switch tabs with shift + arrow
-map <S-Right> :tabn<CR>
-map <S-Left>  :tabp<CR>
+map <C-Right> :tabn<CR>
+map <C-Left>  :tabp<CR>
 "New tab with shift + t or shift + n
-map <S-t>     :tabnew<CR>
-map <S-n>     :tabnew<CR>
+map <C-t>     :tabnew<CR>
+map <C-n>     :tabnew<CR>
 "Close tab with shift + w
-map <S-w>     :tabclose<CR>
+map <C-w>     :tabclose<CR>
 "Save with shift + w
-map <S-s>     :w<CR>
-map <S-S>     :w<CR>
+map <C-s>     :w<CR>
+map <C-S>     :w<CR>
 
 map <C-z> u
 map <C-t> :tabnew <Enter>
 map <C-w> :close <Enter>
+
+" shift+arrow selection
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+imap <S-Up> <Esc>v<Up>
+imap <S-Down> <Esc>v<Down>
+imap <S-Left> <Esc>v<Left>
+imap <S-Right> <Esc>v<Right>
+
+vmap <C-c> y<Esc>i
+vmap <C-x> d<Esc>i
+map <C-v> pi
+imap <C-v> <Esc>pi
+imap <C-z> <Esc>ui
 
 
 execute pathogen#infect()
