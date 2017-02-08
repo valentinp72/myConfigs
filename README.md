@@ -15,7 +15,9 @@ git clone https://github.com/valentinp72/myVIM.git ~/git/myVIM &&\
 Copy and paste this into a terminal:
 
 ```shell
-git pull ~/git/myVIM/ &&\
+cd ~/git/myVIM &&\
+git pull &&\
+cd - &&\
 ~/git/myVIM/install.sh TRUE
 ```
 
