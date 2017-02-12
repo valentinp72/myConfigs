@@ -45,7 +45,7 @@ else
 
 	echo " ... Done"
 
-	echo "Your vim is no ready ! :)"
+	echo "Your vim is now ready ! :)"
 
 fi
 fi
