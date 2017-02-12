@@ -8,13 +8,17 @@ set autoindent
 set smartindent
 set cindent
 set tabstop=4 " largeur des tabulations
+if has('breakindent')
+	set breakindent " identation when a line is breaked
+endif
 set whichwrap+=<,>,h,l,[,]
 set cursorline
 set wrap linebreak nolist " soft wrap automatique
-set clipboard=unamed
+set clipboard=unamedplus
+
 let g:netrw_liststyle = 3
 
-" Auto-refresh des fichiers
+" Files auto-refresh
 set autoread
 au CursorHold * checktime
 set laststatus=2
