@@ -50,7 +50,7 @@ autocmd WinEnter * if &ft == 'nerdtree' | call s:MyNERDTreeSetting() | endif
 
 " ------- "
 " MAPPING "
-" ------- "	
+" ------- "
 
 nnoremap <silent> <F8> :!clear;gcc "%" -o "%" "&&" "./%"<CR>
 vnoremap \y y:call system("pbcopy", getreg("\""))<CR>
@@ -59,6 +59,9 @@ nnoremap \p :call setreg("\"", system("pbpaste"))<CR>p
 noremap YY "+y<CR>
 noremap P "+gP<CR>
 noremap XX "+x<CR>"
+
+" Supress trailing characters by pressing F5
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 
 "Switch tabs with shift + arrow
