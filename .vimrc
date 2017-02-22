@@ -34,6 +34,8 @@ let g:airline_powerline_fonts = 1
 let g:nerdtree_tabs_meaningful_tab_names = 1
 let g:nerdtree_tabs_open_on_console_startup=1
 
+let NERDTreeIgnore = ['\.o$', '\.out$', '\.dSYM$', '\.pyc$']
+
 " Permet d'ouvrir un onglet en double-cliquant (NERDTree)
 fun! s:MyNERDTreeSetting()
 	fun! s:DoubleClickBehavior()
