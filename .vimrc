@@ -18,6 +18,9 @@ set clipboard=unamedplus
 
 let g:netrw_liststyle = 3
 
+" Swap files not in the same folder
+set directory=$HOME/.vim/swapfiles//
+
 " Files auto-refresh
 set autoread
 au CursorHold * checktime
@@ -25,7 +28,11 @@ set laststatus=2
 let g:airline_detect_paste=1
 
 set encoding=utf8
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+""set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+
+" Syntax color for all c-like functions
+syn match myFunction "\<\k\+\ze("
+hi link myFunction Function
 
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
