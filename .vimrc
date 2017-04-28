@@ -15,11 +15,12 @@ set whichwrap+=<,>,h,l,[,]
 set cursorline
 set wrap linebreak nolist " soft wrap automatique
 set clipboard=unamedplus
+set hlsearch " highlight search results
 
 let g:netrw_liststyle = 3
 
 " Swap files not in the same folder
-set directory=$HOME/.vim/swapfiles//
+set directory=$HOME/.vim/swapfiles/
 
 " Files auto-refresh
 set autoread
