@@ -73,6 +73,8 @@ noremap XX "+x<CR>"
 " Supress trailing characters by pressing F5
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
+" Disable hightlight search results with enter
+nnoremap <CR> :noh<CR><CR>
 
 "Switch tabs with shift + arrow
 map <C-Right> :tabn<CR>
