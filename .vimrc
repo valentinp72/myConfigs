@@ -1,9 +1,18 @@
 syntax enable
+set nocompatible
+filetype plugin on
+syntax on
 set background=dark
 colorscheme solarized
 set number
 set showcmd
 set mouse=a
+" Allow mouse draggin in vim
+if has("mouse_sgr")
+	set ttymouse=sgr
+else
+	set ttymouse=xterm2
+end
 set autoindent
 set smartindent
 set cindent
@@ -74,7 +83,7 @@ noremap XX "+x<CR>"
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Disable hightlight search results with enter
-nnoremap <CR> :noh<CR><CR>
+"nnoremap <CR> :noh<CR><CR>
 
 "Switch tabs with shift + arrow
 map <C-Right> :tabn<CR>
