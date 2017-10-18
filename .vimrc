@@ -17,6 +17,7 @@ set autoindent
 set smartindent
 set cindent
 set tabstop=4 " largeur des tabulations
+set shiftwidth=4 " un seul tab à chaque intendation
 if has('breakindent')
 	set breakindent " identation when a line is breaked
 endif
