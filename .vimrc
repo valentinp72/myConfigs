@@ -3,7 +3,7 @@ set nocompatible
 filetype plugin on
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 set number
 set showcmd
 set mouse=a
@@ -17,6 +17,7 @@ set autoindent
 set smartindent
 set cindent
 set tabstop=4 " largeur des tabulations
+set shiftwidth=4 " un seul tab à chaque intendation
 if has('breakindent')
 	set breakindent " identation when a line is breaked
 endif
@@ -47,7 +48,7 @@ hi link myFunction Function
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
 let g:solarized_termtrans=1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:nerdtree_tabs_meaningful_tab_names = 1
 let g:nerdtree_tabs_open_on_console_startup=1
 
