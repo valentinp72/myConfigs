@@ -1,7 +1,18 @@
-syntax enable
-set nocompatible
-filetype plugin on
-syntax on
+"
+" File   : .vimrc
+" Update : December 23, 2017
+" Author : PELLOIN Valentin
+" Link   : https://github.com/valentinp72/myConfigs
+"
+
+"
+" Main configurations
+"
+
+set nocompatible   " not compatible with vi
+syntax enable      " enable syntax hightlighting
+filetype plugin on " commands according to filetype
+
 set background=dark
 colorscheme gruvbox
 set number
@@ -28,6 +39,10 @@ set clipboard=unamedplus
 set hlsearch " highlight search results
 
 let g:netrw_liststyle = 3
+
+" Utilisation de ;; pour Esc (changer de mode)
+:imap ;; <Esc>
+:map ;; <Esc>
 
 " Swap files not in the same folder
 set directory=$HOME/.vim/swapfiles/
@@ -92,6 +107,8 @@ map <C-Left>  :tabp<CR>
 "New tab with shift + t or shift + n
 map <C-t>     :tabnew<CR>
 map <C-n>     :tabnew<CR>
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
 "Close tab with shift + w
 map <C-w>     :tabclose<CR>
 "Save with shift + w
