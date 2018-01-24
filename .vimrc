@@ -140,4 +140,13 @@ imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
 
 
+" A blue theme for vim airline
+let g:airline_theme='vice'
+
+" Arrows for vim airline
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
+
 execute pathogen#infect()
