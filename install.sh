@@ -39,9 +39,10 @@ else
 	echo "<- Creating link to the new config files ->"
 	echo -n "   ..."
 
-	ln -s ~/git/myVIM/.vimrc ~/.vimrc
-	ln -s ~/git/myVIM/.vim ~/.vim
-	ln -s ~/git/myVIM/.vimpkg ~/.vimpkg
+	ln -s ~/git/myConfigs/.vimrc ~/.vimrc
+	ln -s ~/git/myConfigs/.vim ~/.vim
+	ln -s ~/git/myConfigs/.vimpkg ~/.vimpkg
+	ln -s ~/git/myConfigs/.tmux.conf
 
 	echo " ... Done"
 
