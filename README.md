@@ -6,19 +6,19 @@ My vimrc config file + plugins
 Copy and paste this into a terminal:
 
 ```shell
-mkdir -p ~/git/myVIM &&\
-git clone https://github.com/valentinp72/myVIM.git ~/git/myVIM &&\
-~/git/myVIM/install.sh
+mkdir -p ~/git/myConfigs &&\
+git clone https://github.com/valentinp72/myConfigs.git ~/git/myConfigs &&\
+~/git/myConfigs/install.sh
 ```
 ## How to update:
 
 Copy and paste this into a terminal:
 
 ```shell
-cd ~/git/myVIM &&\
+cd ~/git/myConfigs &&\
 git pull &&\
 cd - &&\
-~/git/myVIM/install.sh TRUE
+~/git/myConfigs/install.sh TRUE
 ```
 
 ## How to remove:
@@ -26,5 +26,5 @@ cd - &&\
 Copy and paste this into a terminal:
 
 ```shell
-rm -rf ~/git/myVIM
+rm -rf ~/git/myConfigs
 ```
