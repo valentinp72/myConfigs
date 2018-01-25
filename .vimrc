@@ -13,8 +13,9 @@ set nocompatible   " not compatible with vi
 syntax enable      " enable syntax hightlighting
 filetype plugin on " commands according to filetype
 
+" colorscheme gruvbox
+colorscheme solarized
 set background=dark
-colorscheme gruvbox
 set number
 set showcmd
 set mouse=a
@@ -101,7 +102,7 @@ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
 " Disable hightlight search results with enter
 "nnoremap <CR> :noh<CR><CR>
 
-"Switch tabs with shift + arrow
+" Switch tabs with shift + arrow
 map <C-Right> :tabn<CR>
 map <C-Left>  :tabp<CR>
 "New tab with shift + t or shift + n
@@ -150,3 +151,10 @@ let g:airline_left_alt_sep= ''
 let g:airline_left_sep = ''
 
 execute pathogen#infect()
+
+
+" some configuration seems to change the colorscheme, so
+" I put it here:
+colorscheme solarized
+
+
