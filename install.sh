@@ -43,6 +43,7 @@ else
 	ln -s ~/git/myConfigs/.vim ~/.vim
 	ln -s ~/git/myConfigs/.vimpkg ~/.vimpkg
 	ln -s ~/git/myConfigs/.tmux.conf ~/.tmux.conf
+	ln -s ~/git/myConfigs/.config ~/.config 
 
 	echo " ... Done"
 
