@@ -13,8 +13,8 @@ set nocompatible   " not compatible with vi
 syntax enable      " enable syntax hightlighting
 filetype plugin on " commands according to filetype
 
-" colorscheme gruvbox
-colorscheme solarized
+colorscheme gruvbox
+"colorscheme solarized
 set background=dark
 set number
 set showcmd
@@ -42,8 +42,8 @@ set hlsearch " highlight search results
 let g:netrw_liststyle = 3
 
 " Utilisation de ;; pour Esc (changer de mode)
-:imap ;; <Esc>
-:map ;; <Esc>
+":imap ;; <Esc>
+":map ;; <Esc>
 
 " Swap files not in the same folder
 set directory=$HOME/.vim/swapfiles/
@@ -54,6 +54,9 @@ au CursorHold * checktime
 set laststatus=2
 let g:airline_detect_paste=1
 
+" auto color for Gemfile
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+
 set encoding=utf8
 ""set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 
@@ -62,26 +65,12 @@ syn match myFunction "\<\k\+\ze("
 hi link myFunction Function
 
 " Show airline for tabs too
+
 let g:airline#extensions#tabline#enabled = 1
-let g:solarized_termtrans=1
-let g:airline_powerline_fonts = 0
-let g:nerdtree_tabs_meaningful_tab_names = 1
-let g:nerdtree_tabs_open_on_console_startup=1
-
-let NERDTreeIgnore = ['\.o$', '\.out$', '\.dSYM$', '\.pyc$']
-
-" Permet d'ouvrir un onglet en double-cliquant (NERDTree)
-fun! s:MyNERDTreeSetting()
-	fun! s:DoubleClickBehavior()
-		if match(getline('.'), '▸') == -1 && match(getline('.'), '▾') == -1
-			map <buffer> <2-LeftMouse> t
-		else
-			map <buffer> <2-LeftMouse> o
-		endif
-	endfun
-	autocmd CursorMoved * call s:DoubleClickBehavior()
-endfun
-
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_tab_nr = 0
 autocmd WinEnter * if &ft == 'nerdtree' | call s:MyNERDTreeSetting() | endif
 
 " ------- "
@@ -150,11 +139,45 @@ let g:airline_right_sep = ''
 let g:airline_left_alt_sep= ''
 let g:airline_left_sep = ''
 
-execute pathogen#infect()
+" Ctrl-p: fuzzy file finder
+" search only on the current file directory
+let g:ctrlp_working_path_mode = 'a' 
+" Ignore files listed in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
+
+if executable('pbcopy')
+  map <C-c> :w !pbcopy<CR><CR>
+endif
+if executable('pbpaste')
+  map <C-v> :r !pbpaste<CR><CR>
+endif
+
+" Auto getters and setters on Java
+map <buffer> <F8> <Plug>JavagetsetInsertGetterSetter 
+
+let b:javagetset_getterTemplate = 
+  \ "/**\n" . 
+  \ " * Returns %varname%.\n" . 
+  \ " * @return %varname%\n" . 
+  \ " */\n" . 
+  \ "%modifiers% %type% %funcname%() {\n" .
+  \ "	return %varname%;\n" .
+  \ "}\n"
+
+let b:javagetset_setterTemplate =
+  \ "/**\n" .
+  \ " * Sets %varname%.\n" .
+  \ " * @param %varname% the new %varname%\n" .
+  \ " */\n" .
+  \ "%modifiers% void %type% %funcname%(%type% %varname%) {\n" .
+  \ "	this.%varname% = %varname%;\n" .
+  \ "}\n"
+
+execute pathogen#infect()
 
 " some configuration seems to change the colorscheme, so
 " I put it here:
-colorscheme solarized
+" colorscheme solarized
 
 

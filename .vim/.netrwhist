@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/Valentin/git/l3-programmationSysteme/TP_Bataille_Navale/Signaux'
-let g:netrw_dirhist_2='/Users/Valentin/git/l3-codage/GPA'
-let g:netrw_dirhist_3='/Users/Valentin/Desktop/getters'
+let g:netrw_dirhist_1='/Users/Valentin/.oh-my-zsh'
+let g:netrw_dirhist_2='/Users/Valentin/git/picross/src/UI/Frames'
+let g:netrw_dirhist_3='/Users/Valentin/git/picross/src/UI/Assets'
